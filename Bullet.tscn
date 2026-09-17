@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://br862io3gv8h1"]
+
+[ext_resource type="Script" uid="uid://bfu7bm462nx2b" path="res://bullet.gd" id="1_4s4u5"]
+[ext_resource type="Texture2D" uid="uid://dfurt3bgtvrd0" path="res://icon.svg" id="1_ayd6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(25, 12)
+
+[node name="Node2D" type="Node2D" unique_id=301621106]
+script = ExtResource("1_4s4u5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=443500070]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=661430813]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=998869655]
+position = Vector2(0, -1.7881393e-07)
+scale = Vector2(0.171875, 0.078125)
+texture = ExtResource("1_ayd6b")
+
+[node name="Timer" type="Timer" parent="." unique_id=75716751]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
