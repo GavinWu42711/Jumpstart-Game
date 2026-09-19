@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cuj2xwc55rgac"]
+
+[ext_resource type="Script" uid="uid://br3w8pefc3i4q" path="res://scripts/enemy.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://cb8im44cga2w4" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_s7bn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(21, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(23, 19)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7bn3"]
+bg_color = Color(0.10037925, 0.7258494, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7bn3"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hac7"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6d4v"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp131"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6do27"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvmyp"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nxwx"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52xpa"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdgko"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4qr3"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73x2u"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iwxp"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v6dm"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r3mv"]
+atlas = ExtResource("2_s7bn3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1abw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7bn3")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hac7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6d4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp131")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6do27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvmyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nxwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52xpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdgko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4qr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73x2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iwxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v6dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r3mv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=555855017]
+script = ExtResource("1_s7bn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286723635]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1152765913]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949159942]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=282552472]
+offset_left = -9.0
+offset_top = -11.0
+offset_right = 9.0
+offset_bottom = -6.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_s7bn3")
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212090577]
+sprite_frames = SubResource("SpriteFrames_l1abw")
+animation = &"idle"

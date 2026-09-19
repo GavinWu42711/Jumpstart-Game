@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Haven Jumpstart Game"
+run/main_scene="uid://61arh71n1n37"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://osmflhl3w282"
 
 [display]
 
@@ -58,3 +63,4 @@ attack={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.3417, 0.6152833, 0.67, 1)

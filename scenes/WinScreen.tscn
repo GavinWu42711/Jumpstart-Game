@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ceiyigkdm4aa0"]
+
+[ext_resource type="Script" uid="uid://b2f7hfi1ho32w" path="res://scripts/win_button.gd" id="1_ulig0"]
+[ext_resource type="AudioStream" uid="uid://nvkiusspbxu8" path="res://assets/Sounds/cinematic-soul-motivational-upbeat-music-winning-spirit-511443.mp3" id="2_q8i45"]
+[ext_resource type="Script" uid="uid://cfws31osva5lh" path="res://scenes/audio_stream_player_2d.gd" id="3_jrum5"]
+
+[node name="Node2D" type="Node2D" unique_id=188313212]
+
+[node name="WinButton" type="Button" parent="." unique_id=468815422]
+offset_left = 428.0
+offset_top = 413.0
+offset_right = 750.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 48
+text = "MENU"
+script = ExtResource("1_ulig0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1075913107]
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 1160.0
+offset_bottom = 385.0
+theme_override_font_sizes/font_size = 243
+text = "YOU WIN!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=300809806]
+stream = ExtResource("2_q8i45")
+autoplay = true
+script = ExtResource("3_jrum5")
+
+[connection signal="pressed" from="WinButton" to="WinButton" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
